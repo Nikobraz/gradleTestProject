@@ -16,19 +16,19 @@ public class CalcTest {
 
     @Test
     public void sub() {
-        assertEquals(4, Calc.sum(6,2));
-        assertNotEquals(5, Calc.sum(2,2));
+        assertEquals(4, Calc.sub(6,2));
+        assertNotEquals(5, Calc.sub(2,2));
     }
 
     @Test
     public void mul() {
-        assertEquals(8, Calc.sum(4,2));
-        assertNotEquals(5, Calc.sum(2,2));
+        assertEquals(8, Calc.mul(4,2));
+        assertNotEquals(5, Calc.mul(2,2));
     }
 
     @Test
     public void div() {
-        assertEquals(3, Calc.sum(6,2));
-        assertNotEquals(5, Calc.sum(26,2));
+        assertEquals(3, Calc.div(6,2));
+        assertNotEquals(5, Calc.div(26,2));
     }
 }
