@@ -38,18 +38,11 @@ mainClassName = 'ru.nikobraz.gradleTestProject.Calc'
 
 task fatJar(type: Jar) {
     manifest {
-        attributes 'Implementation-Title': 'Gradle Jar File Example',
-                'Main-Class': 'com.mkyong.DateUtils'
-    }
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-    with jar
-}
-
-jar {
-    manifest {
         attributes (
                 'Class-Path': configurations.compile.collect { it.getName() }.join(' ') ,
                 'Main-Class': 'ru.nikobraz.gradleTestProject.Calc'
         )
     }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
 }
