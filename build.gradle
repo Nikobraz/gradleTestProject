@@ -36,6 +36,15 @@ group 'ru.nikobraz'
 version '1.0-SNAPSHOT'
 mainClassName = 'ru.nikobraz.gradleTestProject.Calc'
 
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Jar File Example',
+                'Main-Class': 'com.mkyong.DateUtils'
+    }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
 jar {
     manifest {
         attributes (
